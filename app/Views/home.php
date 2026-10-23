@@ -16,28 +16,34 @@ $utilisateurConnecte = $_SESSION['utilisateur'] ?? null;
     <h1>Touche pas au klaxon</h1>
     <p>Le covoiturage, simplement et sereinement.</p>
 
-    <nav>
+        <nav class="navigation-principale">
+        <a href="/">Accueil</a>
+        <a href="/trajets">Rechercher un trajet</a>
+
         <?php if ($utilisateurConnecte): ?>
-            <p>
+            <a href="/proposer-trajet">Proposer un trajet</a>
+            <a href="/mes-trajets">Mes trajets</a>
+            <a href="/mes-reservations">Mes réservations</a>
+
+            <?php if (($utilisateurConnecte['role'] ?? '') === 'admin'): ?>
+                <a href="/admin">Administration</a>
+            <?php endif; ?>
+
+            <span class="salutation">
                 Bonjour,
-                <strong>
-                    <?= htmlspecialchars(
-                        $utilisateurConnecte['prenom'],
-                        ENT_QUOTES,
-                        'UTF-8'
-                    ) ?>
-                </strong> !
-            </p>
+                <strong><?= htmlspecialchars(
+                    $utilisateurConnecte['prenom'],
+                    ENT_QUOTES,
+                    'UTF-8'
+                ) ?></strong> !
+            </span>
 
             <form action="/deconnexion" method="POST">
                 <button class="btn" type="submit">Se déconnecter</button>
             </form>
         <?php else: ?>
-            <p>
-                <a href="/inscription">Créer un compte</a>
-                |
-                <a href="/connexion">Se connecter</a>
-            </p>
+            <a href="/inscription">Créer un compte</a>
+            <a href="/connexion">Se connecter</a>
         <?php endif; ?>
     </nav>
 </header>

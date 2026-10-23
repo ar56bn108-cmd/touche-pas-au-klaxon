@@ -12261,3 +12261,40 @@ nav.navigation-mes-trajets a:hover {
   border-color: var(--vert-fonce);
   color: #ffffff;
 }
+
+/* Navigation principale du site */
+header nav.navigation-principale {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+header nav.navigation-principale a {
+  margin: 0;
+}
+
+header nav.navigation-principale .salutation {
+  color: var(--blanc);
+  margin: 0 4px;
+}
+
+header nav.navigation-principale form {
+  margin: 0;
+}
+
+header nav.navigation-principale form .btn {
+  margin: 0;
+}
+
+/* Navigation sur les petits écrans */
+@media (max-width: 600px) {
+  header nav.navigation-principale {
+    gap: 6px;
+  }
+  header nav.navigation-principale a {
+    padding: 8px 10px;
+  }
+}
