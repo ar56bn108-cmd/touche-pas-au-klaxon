@@ -1,0 +1,11 @@
+parameters:
+    level: 5
+    paths:
+        - app
+        - config
+        - routes
+        - public
+    tmpDir: var/phpstan
+    excludePaths:
+        analyseAndScan:
+            - app/Views/*

@@ -1,0 +1,33 @@
+# Dependances Composer
+/vendor/
+
+# Configuration locale et secrets
+.env
+.env.*
+!.env.example
+auth.json
+
+# Caches et fichiers temporaires
+/var/
+/.phpunit.cache/
+/.phpstan/
+/coverage/
+
+# Journaux
+*.log
+
+# Sauvegardes
+*.bak
+*.old
+*.tmp
+*~
+*.bak-*
+
+# Fichiers systeme et editeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Dependances Node.js
+/node_modules/

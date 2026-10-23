@@ -1,0 +1,420 @@
+:root {
+  --bleu: #0074c7;
+  --bleu-fonce: #00497c;
+  --vert: #0074c7;
+  --vert-fonce: #00497c;
+  --vert-clair: #f1f8fc;
+  --fond: #f1f8fc;
+  --blanc: #ffffff;
+  --texte: #384050;
+  --texte-doux: #384050;
+  --bordure: #d7e5ef;
+  --rouge: #cd2c2e;
+  --vert-accent: #82b864;
+  --ombre: 0 8px 28px rgba(0, 73, 124, 0.10);
+  --rayon: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--fond);
+  color: var(--texte);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  background: linear-gradient(135deg, #0074c7, #00497c);
+  color: var(--blanc);
+  padding: 32px 20px;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(16, 80, 68, 0.15);
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.25;
+  letter-spacing: -0.7px;
+}
+
+header p {
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+header nav {
+  margin-top: 20px;
+}
+
+header nav p {
+  margin: 10px 0;
+}
+
+header nav a {
+  display: inline-block;
+  margin: 4px;
+  padding: 9px 17px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 9px;
+  color: var(--blanc);
+  text-decoration: none;
+  font-weight: bold;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    transform 0.2s;
+}
+
+header nav a:hover {
+  background-color: var(--blanc);
+  color: var(--vert);
+  transform: translateY(-1px);
+}
+
+header nav form {
+  margin: 12px 0 0;
+}
+
+main {
+  width: min(100% - 40px, 1120px);
+  margin: 42px auto;
+  min-height: 45vh;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.3;
+}
+
+h2 {
+  color: var(--vert);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0 0 24px;
+  letter-spacing: -0.4px;
+}
+
+h3 {
+  line-height: 1.4;
+}
+
+.trajet-card {
+  background-color: var(--blanc);
+  border-radius: var(--rayon);
+  padding: 28px;
+  margin-bottom: 24px;
+  border: 1px solid var(--bordure);
+  box-shadow: var(--ombre);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.trajet-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(25, 55, 48, 0.12);
+}
+
+.trajet-card h3 {
+  color: var(--vert);
+  margin: 0 0 20px;
+  font-size: 1.5rem;
+  letter-spacing: -0.3px;
+}
+
+.trajet-card p {
+  margin: 9px 0;
+  overflow-wrap: anywhere;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 7px;
+  font-weight: bold;
+  color: #34443f;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background-color: var(--blanc);
+  color: var(--texte);
+  font: inherit;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  display: block;
+  width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--vert);
+  box-shadow: 0 0 0 4px rgba(0, 116, 199, 0.12);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #98a2b3;
+}
+
+.btn,
+button {
+  display: inline-block;
+  background-color: var(--vert);
+  color: var(--blanc);
+  padding: 12px 21px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  text-decoration: none;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.btn:hover,
+button:hover {
+  background-color: var(--vert-fonce);
+  box-shadow: 0 5px 14px rgba(16, 80, 68, 0.18);
+  transform: translateY(-1px);
+}
+
+.btn:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #82b864;
+  outline-offset: 3px;
+}
+
+button:active,
+.btn:active {
+  transform: translateY(0);
+}
+
+.retour {
+  display: inline-block;
+  margin-top: 22px;
+  color: var(--vert);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.retour:hover {
+  color: var(--vert-fonce);
+  text-decoration: underline;
+}
+
+.auth-container {
+  width: min(100% - 40px, 500px);
+  margin: 48px auto;
+  padding: 34px;
+  background-color: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+}
+
+.auth-container h1 {
+  margin: 0 0 12px;
+  color: var(--vert);
+  font-size: 1.9rem;
+}
+
+.auth-container form {
+  margin-top: 26px;
+}
+
+.auth-container form button {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.auth-container a {
+  color: var(--vert);
+  font-weight: bold;
+}
+
+.auth-container a:hover {
+  color: var(--vert-fonce);
+}
+
+.message-erreur {
+  padding: 13px 16px;
+  margin: 18px 0;
+  border: 1px solid #f3c6c6;
+  border-radius: 10px;
+  background-color: #fff1f1;
+  color: #a32121;
+}
+
+.message-succes {
+  padding: 13px 16px;
+  margin: 18px 0;
+  border: 1px solid #b8e4ca;
+  border-radius: 10px;
+  background-color: #eaf8ef;
+  color: #176b42;
+}
+
+footer {
+  text-align: center;
+  padding: 26px 20px;
+  color: var(--texte-doux);
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 25px 15px;
+  }
+
+  header h1 {
+    font-size: 1.7rem;
+  }
+
+  header nav a {
+    padding: 9px 12px;
+  }
+
+  main {
+    width: calc(100% - 24px);
+    margin: 26px auto;
+  }
+
+  h2 {
+    margin-bottom: 18px;
+  }
+
+  .trajet-card {
+    padding: 20px;
+    border-radius: 13px;
+  }
+
+  .trajet-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .auth-container {
+    width: calc(100% - 24px);
+    padding: 23px;
+    margin: 28px auto;
+  }
+
+  .btn,
+  button {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* Actions sur la page Mes trajets */
+.lien-action {
+  display: inline-block;
+  margin: 5px 0;
+  color: var(--vert);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.lien-action:hover {
+  color: var(--vert-fonce);
+  text-decoration: underline;
+}
+
+/* Bouton secondaire Annuler */
+.btn-secondaire {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background-color: #f1f5f9;
+  color: #334155;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-secondaire:hover {
+  background-color: #e2e8f0;
+  border-color: #94a3b8;
+  color: #1e293b;
+}
+
+/* Navigation de la page Mes trajets */
+.navigation-mes-trajets a {
+  display: inline-block;
+  color: var(--vert);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navigation-mes-trajets a:hover {
+  color: var(--vert-fonce);
+  text-decoration: underline;
+}
+
+/* Correction finale : boutons de navigation Mes trajets */
+nav.navigation-mes-trajets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+nav.navigation-mes-trajets a {
+  display: inline-block;
+  padding: 11px 18px;
+  border: 1px solid var(--vert);
+  border-radius: 8px;
+  background: var(--vert);
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav.navigation-mes-trajets a:hover {
+  background: var(--vert-fonce);
+  border-color: var(--vert-fonce);
+  color: #ffffff;
+}

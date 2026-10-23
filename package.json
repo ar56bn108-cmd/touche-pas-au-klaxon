@@ -1,0 +1,27 @@
+{
+  "name": "touche-pas-au-klaxon",
+  "version": "1.0.0",
+  "description": "Application de covoiturage développée en PHP selon l'architecture MVC, avec une base de données MySQL/MariaDB.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "php vendor/bin/phpunit",
+    "sass:build": "sass --no-source-map --load-path=node_modules public/scss/style.scss public/css/style.css --style=expanded",
+    "sass:watch": "sass --watch --load-path=node_modules public/scss/style.scss:public/css/style.css",
+    "test:php": "php vendor/bin/phpunit",
+    "analyse": "php vendor/bin/phpstan analyse --no-progress"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "sass": "^1.106.1"
+  }
+}
